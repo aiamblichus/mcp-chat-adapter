@@ -38,7 +38,7 @@ export function registerChatTool(
   // Define the tool
   server.addTool({
     name: 'chat',
-    description: 'Add a message to a conversation and get a response',
+    description: 'Add a message to a conversation and get a response. As long as you are using the same conversation ID, the conversation will continue. If you want a new conversation with a clean slate, use the `create-conversation` tool again.',
     parameters: chatSchema,
     execute: async ({ conversation_id, message, parameters = {} }, { reportProgress, log }) => {      
       try {

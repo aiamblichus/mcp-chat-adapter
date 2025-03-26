@@ -36,28 +36,30 @@ yarn build
 
 These environment variables must be set for the server to function:
 
+```sh
+OPENAI_API_KEY=your-api-key  # Your API key for OpenAI or compatible service
+OPENAI_API_BASE=https://openrouter.ai/api/v1 # The base URL for the API (can be changed for compatible services)
 ```
-OPENAI_API_KEY=your-api-key                         # Your API key for OpenAI or compatible service
-OPENAI_API_BASE=https://api.openai.com/v1           # The base URL for the API (can be changed for compatible services)
-```
+
+You should also set the `CONVERSATION_DIR` environment variable to the directory where you want to store the conversation data. Use an absolute path.
 
 ### Optional Environment Variables
 
 The following environment variables are optional and have default values:
 
-```
+```sh
 # Model Configuration
-DEFAULT_MODEL=gpt-4o-mini                      # Default model to use if not specified
+DEFAULT_MODEL=google/gemini-2.0-flash-001 # Default model to use if not specified
 DEFAULT_SYSTEM_PROMPT="You are an unhelpful assistant."  # Default system prompt
-DEFAULT_MAX_TOKENS=50000                       # Default maximum tokens for completion
-DEFAULT_TEMPERATURE=0.7                        # Default temperature setting
-DEFAULT_TOP_P=1.0                              # Default top_p setting
-DEFAULT_FREQUENCY_PENALTY=0.0                  # Default frequency penalty
-DEFAULT_PRESENCE_PENALTY=0.0                   # Default presence penalty
+DEFAULT_MAX_TOKENS=50000 # Default maximum tokens for completion
+DEFAULT_TEMPERATURE=0.7  # Default temperature setting
+DEFAULT_TOP_P=1.0 # Default top_p setting
+DEFAULT_FREQUENCY_PENALTY=0.0 # Default frequency penalty
+DEFAULT_PRESENCE_PENALTY=0.0  # Default presence penalty
 
 # Storage Configuration
-CONVERSATION_DIR=./convos                      # Directory to store conversation data
-MAX_CONVERSATIONS=1000                         # Maximum number of conversations to store
+CONVERSATION_DIR=./convos # Directory to store conversation data
+MAX_CONVERSATIONS=1000 # Maximum number of conversations to store
 ```
 
 ## Usage

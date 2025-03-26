@@ -15,7 +15,7 @@ export const PROGRESS_UPDATE_INTERVAL_MS = 500; // 0.5 seconds
 
 // Server info
 export const SERVER_NAME = 'mcp-chat-adapter';
-export const SERVER_VERSION = '1.0.8';
+export const SERVER_VERSION = '1.1.0';
 
 // Conversation storage
 export const CONVERSATION_DIR = process.env.CONVERSATION_DIR || './convos';
