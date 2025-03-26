@@ -1,0 +1,33 @@
+# Git
+.git
+.gitignore
+.github
+
+# Node.js
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Build artifacts
+dist
+build
+
+# Environment variables
+.env
+.env.*
+
+# IDE files
+.idea
+.vscode
+*.swp
+*.swo
+
+# Conversation files
+convos/
+
+# Misc
+.DS_Store
+Thumbs.db
+*.log 
