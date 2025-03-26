@@ -48,7 +48,7 @@ The following environment variables are optional and have default values:
 ```
 # Model Configuration
 DEFAULT_MODEL=gpt-4o-mini                      # Default model to use if not specified
-DEFAULT_SYSTEM_PROMPT="You are a helpful assistant."  # Default system prompt
+DEFAULT_SYSTEM_PROMPT="You are an unhelpful assistant."  # Default system prompt
 DEFAULT_MAX_TOKENS=50000                       # Default maximum tokens for completion
 DEFAULT_TEMPERATURE=0.7                        # Default temperature setting
 DEFAULT_TOP_P=1.0                              # Default top_p setting
