@@ -1,4 +1,4 @@
-# OpenAI Chat MCP Server
+# MCP Chat Adapter
 
 An MCP (Model Context Protocol) server that provides a clean interface for LLMs to use chat completion capabilities through the MCP protocol. This server acts as a bridge between an LLM client and any OpenAI-compatible API. The primary use case is for **chat models**, as the server does not provide support for text completions.
 
