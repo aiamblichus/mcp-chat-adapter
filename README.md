@@ -8,7 +8,7 @@ The OpenAI Chat MCP Server implements the Model Context Protocol (MCP), allowing
 
 ## Features
 
-- Built with FastMCP for robust and clean implementation
+- Built with [FastMCP](https://github.com/punkpeye/fastmcp) for robust and clean implementation
 - Provides tools for conversation management and chat completion
 - Proper error handling and timeouts
 - Supports conversation persistence with local storage
@@ -16,19 +16,13 @@ The OpenAI Chat MCP Server implements the Model Context Protocol (MCP), allowing
 - Configurable model parameters and defaults
 - Compatible with OpenAI and OpenAI-compatible APIs
 
-## Installation
+## Typical Workflow
 
-```bash
-# Clone the repository
-git clone <repository-url>
-cd mcp-chat-adapter
+The idea is that you can have Claude spin off and maintain multiple conversations with other models in the background. All conversations are stored in the `CONVERSATION_DIR` directory, which you should set in the `env` section of your `mcp.json` file. 
 
-# Install dependencies
-yarn install
+It is possible to tell Claude either to create a new conversation, or to continue an existing one (identified by the integer `conversation_id`). You can continue with the old conversation even if you are starting fresh in a new context, although in that case you may want to tell Claude to read the old conversation before continuing using the `get_conversation` tool. 
 
-# Build the project
-yarn build
-```
+Note that you can also edit the conversations in the `CONVERSATION_DIR` directory manually. In this case, you may need to restart the server to see the changes.
 
 ## Configuration
 
@@ -62,12 +56,6 @@ CONVERSATION_DIR=./convos # Directory to store conversation data
 MAX_CONVERSATIONS=1000 # Maximum number of conversations to store
 ```
 
-## Usage
-
-### Integrating with MCP Clients
-
-This server is designed to be used with MCP clients that can communicate using the Model Context Protocol. The server exposes several tools that clients can invoke to manage conversations and interact with language models.
-
 ### Integrating with Claude UI etc.
 
 Your `mcp.json` file should look like this:
@@ -91,6 +79,8 @@ Your `mcp.json` file should look like this:
   }
 }
 ```
+
+The latest version of the package is published to npm [here](https://www.npmjs.com/package/mcp-chat-adapter).
 
 ## Available Tools
 
@@ -178,10 +168,26 @@ Deletes a conversation.
 
 ## Development
 
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/aiamblichus/mcp-chat-adapter.git
+cd mcp-chat-adapter
+
+# Install dependencies
+yarn install
+
+# Build the project
+yarn build
+```
+
+### Running the server
+
 For FastMCP cli run:
 
 ```bash
-yarn dev
+yarn cli
 ```
 
 For FastMCP inspect run:
@@ -190,9 +196,6 @@ For FastMCP inspect run:
 yarn inspect
 ```
 
-### Project Structure
-
-The server is organized into modules that handle different aspects of the MCP implementation, conversation management, and API interactions. The codebase follows best practices for TypeScript development and MCP implementation.
 
 ### Contributing
 

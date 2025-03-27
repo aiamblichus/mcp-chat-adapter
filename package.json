@@ -12,10 +12,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "start": "node dist/cli.js",
-    "dev": "fastmcp dev tsx src/cli.ts",
-    "inspect": "fastmcp inspect tsx src/cli.ts",
-    "prepublishOnly": "npm run build"
+    "cli": "fastmcp cli src/cli.ts",
+    "inspect": "fastmcp inspect src/cli.ts"
   },
   "keywords": [
     "mcp",
