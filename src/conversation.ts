@@ -15,7 +15,7 @@ import {
   getNextConversationId,
   Logger
 } from './utils.js';
-import { DEFAULT_MODEL } from './constants.js';
+import { DEFAULT_FREQUENCY_PENALTY, DEFAULT_MAX_TOKENS, DEFAULT_MODEL, DEFAULT_PRESENCE_PENALTY, DEFAULT_TEMPERATURE, DEFAULT_TOP_P } from './constants.js';
 
 /**
  * Conversation Manager class
@@ -43,11 +43,11 @@ export class ConversationManager {
       
       // Set default parameters
       const parameters = {
-        temperature: args.parameters?.temperature ?? 0.7,
-        max_tokens: args.parameters?.max_tokens ?? 1000,
-        top_p: args.parameters?.top_p ?? 1.0,
-        frequency_penalty: args.parameters?.frequency_penalty ?? 0.0,
-        presence_penalty: args.parameters?.presence_penalty ?? 0.0,
+        temperature: args.parameters?.temperature ?? DEFAULT_TEMPERATURE,
+        max_tokens: args.parameters?.max_tokens ?? DEFAULT_MAX_TOKENS,
+        top_p: args.parameters?.top_p ?? DEFAULT_TOP_P,
+        frequency_penalty: args.parameters?.frequency_penalty ?? DEFAULT_FREQUENCY_PENALTY,
+        presence_penalty: args.parameters?.presence_penalty ?? DEFAULT_PRESENCE_PENALTY,
       };
       
       // Initialize messages array with system message if provided

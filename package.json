@@ -1,6 +1,6 @@
 {
   "name": "mcp-chat-adapter",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "MCP server for OpenAI chat completion",
   "type": "module",
   "main": "dist/cli.js",

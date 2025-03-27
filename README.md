@@ -64,16 +64,6 @@ MAX_CONVERSATIONS=1000 # Maximum number of conversations to store
 
 ## Usage
 
-### Starting the Server
-
-Start the server with the following command:
-
-```bash
-yarn start
-```
-
-This will start the server on stdio, making it available for MCP clients to communicate with. The server listens for MCP messages, processes them, and returns responses according to the MCP protocol specification.
-
 ### Integrating with MCP Clients
 
 This server is designed to be used with MCP clients that can communicate using the Model Context Protocol. The server exposes several tools that clients can invoke to manage conversations and interact with language models.
